@@ -8,7 +8,7 @@ import com.example.airbnb.databinding.ItemFacilitiesDetailBinding
 
 class DetailFacilitiesRVAdapter() :
     RecyclerView.Adapter<DetailFacilitiesRVAdapter.ViewHolder>() {
-    private val facilities =ArrayList<Facility>()
+    private val facilities =ArrayList<Boolean>()
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): DetailFacilitiesRVAdapter.ViewHolder {
         val binding: ItemFacilitiesDetailBinding = ItemFacilitiesDetailBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
@@ -16,25 +16,32 @@ class DetailFacilitiesRVAdapter() :
     }
 
     override fun onBindViewHolder(holder: DetailFacilitiesRVAdapter.ViewHolder, position: Int) {
-        holder.bind(facilities[position])
+        holder.bind(facilities[position], position)
 
     }
 
     override fun getItemCount(): Int = facilities.size
 
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun addFacilities(facilities: java.util.ArrayList<Facility>){
-        this.facilities.clear()           //??
-        this.facilities.addAll(facilities)
-
-        notifyDataSetChanged()
-    }
-
     inner class ViewHolder(val binding: ItemFacilitiesDetailBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(facility: Facility) {
-            binding.itemFacilitiesImgIv.setImageResource(facility.coverImg!!)
-            binding.itemFacilitiesTitleTv.text = facility.content
+        fun bind(facility: Boolean, position: Int) {
+            when(position){
+                0->{ //wifi여부
+
+                }
+                1->{ //수영장 여부
+
+                }
+                2->{ //욕조 여부
+
+                }
+                3->{ //Tv여부
+
+                }
+                4->{ //부엌여부
+
+                }
+
+            }
         }
     }
 
