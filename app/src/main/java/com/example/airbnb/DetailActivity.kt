@@ -32,6 +32,18 @@ class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
         binding.detailPhotoVp.adapter = photoAdapter
         binding.detailPhotoVp.orientation=ViewPager2.ORIENTATION_HORIZONTAL
 
+        //인디케이터 작업
+        //전체 배너 몇개인지 변경
+        binding.textViewTotalBanner.text = photoAdapter.itemCount.toString() //??왜 getItemCount안 불러와지고 itemCount야
+        binding.detailPhotoVp.apply {
+            registerOnPageChangeCallback(object: ViewPager2.OnPageChangeCallback(){
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    binding.textViewCurrentBanner.text = "${position+1}"
+                }
+            })
+        }
+
     }
 
     override fun onStart() {
@@ -44,7 +56,7 @@ class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
     }
 
     private fun initRecyclerview(iA:ArrayList<Int>) { //호텔편의시설 recyclerview
-        //원래 FLO에서는 context 자리에 걍 context 넣던데 왜 난 안돼?
+        //원래 FLO에서는 context 자리에 걍 context 넣던데 왜 안돼?
         binding.detailFacilitiesRv.layoutManager = LinearLayoutManager(this@DetailActivity,LinearLayoutManager.VERTICAL,false)
         val facilityRVAdapter = DetailFacilitiesRVAdapter()
         binding.detailFacilitiesRv.adapter = facilityRVAdapter

@@ -9,6 +9,7 @@ class PhotoVPAdapter(fragment: FragmentActivity) : FragmentStateAdapter(fragment
     private val fragmentlist: ArrayList<Fragment> = ArrayList()
 
     override fun getItemCount(): Int = fragmentlist.size
+    /*override fun getItemCount(): Int = Int.MAX_VALUE //무한스크롤위해 - 실패 */
 
     override fun createFragment(position: Int): Fragment = fragmentlist[position]
 
