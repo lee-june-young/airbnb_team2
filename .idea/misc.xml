@@ -3,10 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/drawable-v24/btm_color_selector.xml" value="0.1" />
+        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/drawable-v24/round_backgroud_border_black.xml" value="0.1" />
         <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/drawable/gray_ellipse.xml" value="0.126" />
+        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/drawable/round_background_border_black.xml" value="0.1" />
         <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/layout/activity_detail.xml" value="0.16354166666666667" />
-        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/layout/activity_main.xml" value="0.13125" />
+        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/layout/fragment_island.xml" value="0.10144927536231885" />
+        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/layout/fragment_message.xml" value="0.1" />
+        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/layout/fragment_search.xml" value="0.10280797101449275" />
+        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/layout/fragment_trip.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/layout/fragment_wishlist.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/layout/item_accommodations.xml" value="0.15806159420289856" />
         <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/layout/item_facilities_detail.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/ran/Project_Android_A/Airbnb/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/ran/Project_Android_A/Airbnb/app/src/main/res/drawable/button_background_airbnb_color.xml" value="0.1" />
         <entry key="..\:/Users/ran/Project_Android_A/Airbnb/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />

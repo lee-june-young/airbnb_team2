@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:id="@+id/profile_user_iv"
+        android:src="@drawable/profile"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="23dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_name_tv"
+        android:text="윤선"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toStartOf="@+id/profile_user_iv"
+        app:layout_constraintTop_toBottomOf="@+id/profile_user_iv"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_see_tv"
+        android:text="프로필 보기"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toStartOf="@+id/profile_name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/profile_name_tv"/>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/profile_financial_iv"
+        android:src="@drawable/ic_cash"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile_see_tv"
+        app:layout_constraintStart_toStartOf="@+id/profile_see_tv"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_financial_tv"
+        android:text="남는 공간을 활용해 수입을 올리세요."
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/profile_financial_iv"
+        app:layout_constraintTop_toTopOf="@+id/profile_financial_iv"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_financial_detail_tv"
+        android:text="자세히 알아보기"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="@+id/profile_financial_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_financial_iv"/>
+
+    <View
+        android:layout_width="360dp"
+        android:layout_height="3px"
+        android:background="@color/gray_color"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_financial_iv"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_account_tv"
+        android:text="계정 관리"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="@+id/profile_name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/profile_financial_iv"/>
+
+
+<!--1-->
+    <LinearLayout
+        android:id="@+id/profile_account_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile_account_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/profile_account_personal_info_iv1"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/user" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_account_personal_info_tv1"
+        android:text="개인 정보"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="12dp"
+        />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/next"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="218dp"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="360dp"
+        android:layout_height="3px"
+        android:background="@color/gray_color"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_account_layout1"/>
+
+    <!--2-->
+    <LinearLayout
+        android:id="@+id/profile_account_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile_account_layout1"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/profile_account_personal_info_iv2"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_cash" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_account_personal_info_tv2"
+            android:text="결제 및 대금 수령"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/next"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="160dp"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="360dp"
+        android:layout_height="3px"
+        android:background="@color/gray_color"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_account_layout2"/>
+
+<!--    3-->
+    <LinearLayout
+        android:id="@+id/profile_account_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile_account_layout2"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/profile_account_personal_info_iv3"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_character" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_account_personal_info_tv3"
+            android:text="번역"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/next"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="255dp"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="360dp"
+        android:layout_height="3px"
+        android:background="@color/gray_color"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_account_layout3"/>
+
+<!--    4-->
+    <LinearLayout
+        android:id="@+id/profile_account_layout4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile_account_layout3"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/profile_account_personal_info_iv4"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_alarm" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_account_personal_info_tv4"
+            android:text="알림"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/next"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="255dp"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="360dp"
+        android:layout_height="3px"
+        android:background="@color/gray_color"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_account_layout4"/>
+
+<!--    5-->
+    <LinearLayout
+        android:id="@+id/profile_account_layout5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile_account_layout4"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/profile_account_personal_info_iv5"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_locker" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_account_personal_info_tv5"
+            android:text="개인정보 보호 및 공유"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/next"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="125dp"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="360dp"
+        android:layout_height="3px"
+        android:background="@color/gray_color"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_account_layout5"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_hosting_tv"
+        android:text="호스팅"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="@+id/profile_name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/profile_account_layout5"/>
+
+    <!--1-->
+    <LinearLayout
+        android:id="@+id/profile_hosting_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile_hosting_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/profile_hosting_iv1"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_add_house" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_hosting_tv1"
+            android:text="숙소 등록하기"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/next"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="180dp"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="360dp"
+        android:layout_height="3px"
+        android:background="@color/gray_color"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_hosting_layout1"/>
+
+    <!--2-->
+    <LinearLayout
+        android:id="@+id/profile_hosting_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile_hosting_layout1"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/profile_hosting_iv2"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_snorkeler" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_hosting_tv2"
+            android:text="체험 호스팅하기"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/next"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="164dp"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="360dp"
+        android:layout_height="3px"
+        android:background="@color/gray_color"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_hosting_layout2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_invite_tv"
+        android:text="추천 및 여행 크래딧"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="@+id/profile_name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/profile_hosting_layout2"/>
+
+    <!--1-->
+    <LinearLayout
+        android:id="@+id/profile_invite_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile_invite_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/profile_invite_iv1"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="23dp"
+            android:src="@drawable/money" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_invite_tv1"
+            android:text="호스트 초대하기"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            />
+
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/next"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="180dp"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="360dp"
+        android:layout_height="3px"
+        android:background="@color/gray_color"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_invite_layout1"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
