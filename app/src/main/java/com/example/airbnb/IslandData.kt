@@ -1,4 +1,5 @@
 package com.example.airbnb
+import java.io.Serializable
 
 data class IslandData(
     /*var coverImg : ArrayList<String>?,*/
@@ -7,4 +8,4 @@ data class IslandData(
     val distance : String? = "",
     val date : String? = "",
     val price : Int? = null
-)
+): Serializable

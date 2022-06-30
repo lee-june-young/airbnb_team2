@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.airbnb.data.response.IslandResult
@@ -19,6 +20,9 @@ class IslandFragment : Fragment() { //, IslandView
 
     lateinit var islandRVAdapter: IslandRVAdapter
     val datas = mutableListOf<IslandData>()
+
+    //
+    private var island:IslandData = IslandData()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -64,8 +68,11 @@ class IslandFragment : Fragment() { //, IslandView
                 override fun onClick(v: View, position: Int) {
                     // 클릭 시 이벤트 작성
                     activity?.let{
+
                         val intent = Intent(context, DetailActivity::class.java)
+                        intent.putExtra("island", datas[position])
                         startActivity(intent)
+
                     }
 
                 }
