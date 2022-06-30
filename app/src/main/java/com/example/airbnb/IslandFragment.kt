@@ -55,7 +55,7 @@ class IslandFragment : Fragment() { //, IslandView
         //dummy
         datas.apply {
             add(IslandData(R.drawable.black_star, "MV, 몰디브", "12345", "12345", 12345))
-            add(IslandData(R.drawable.ic_extinguisher, "MV, 몰디브", "12345", "12345", 12345))
+            add(IslandData(R.drawable.ic_extinguisher, "MV, 몰디브", "45678", "45678", 45678))
             add(IslandData(R.drawable.black_star, "MV, 몰디브", "12345", "12345", 12345))
             add(IslandData(R.drawable.black_star, "MV, 몰디브", "12345", "12345", 12345))
             add(IslandData(R.drawable.black_star, "MV, 몰디브", "12345", "12345", 12345))
@@ -69,6 +69,7 @@ class IslandFragment : Fragment() { //, IslandView
                     // 클릭 시 이벤트 작성
                     activity?.let{
 
+                        //객체 자체를 보내는 방법 (data class)
                         val intent = Intent(context, DetailActivity::class.java)
                         intent.putExtra("island", datas[position])
                         startActivity(intent)

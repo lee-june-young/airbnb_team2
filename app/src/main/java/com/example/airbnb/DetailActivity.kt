@@ -44,6 +44,17 @@ class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
             })
         }
 
+        //intent로 객체 받아오기 -> 서버 연결되면 onSucess()로 이동
+        val intent = intent
+        val island = intent.getSerializableExtra("island") as IslandData?
+
+        Log.d("islandNull", island.toString())
+        if (island != null) {
+            //레이아웃에 있는 text를 변경
+            binding.detailDateTv.text = island.date
+            binding.detailPriceTv.text = island.price.toString()
+        }//
+
     }
 
     override fun onStart() {
@@ -93,6 +104,9 @@ class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
 
     override fun onDetailSuccess(result: ArrayList<DetailHouseInfoResponse>) {
         val essential : DetailHouseInfoResponse = result[0]
+
+
+
         binding.detailTitleTv.text="      " + essential.roomName
         binding.detailLocationTv.text=essential.roomLocation
         binding.detailHostTv.text = essential.hostName
