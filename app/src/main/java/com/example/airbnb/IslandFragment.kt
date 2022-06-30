@@ -1,6 +1,7 @@
 package com.example.airbnb
 
 import android.content.ClipData
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -26,9 +27,6 @@ class IslandFragment : Fragment() { //, IslandView
     ): View? {
         binding = FragmentIslandBinding.inflate(inflater, container, false)
 
-        //id: item_accommodation_cover_img_iv
-
-
         return binding.root
     }
 
@@ -50,11 +48,10 @@ class IslandFragment : Fragment() { //, IslandView
         islandRVAdapter = IslandRVAdapter()
         binding.islandInfoRv.adapter = islandRVAdapter
 
-
         //dummy
         datas.apply {
             add(IslandData(R.drawable.black_star, "MV, 몰디브", "12345", "12345", 12345))
-            add(IslandData(R.drawable.black_star, "MV, 몰디브", "12345", "12345", 12345))
+            add(IslandData(R.drawable.ic_extinguisher, "MV, 몰디브", "12345", "12345", 12345))
             add(IslandData(R.drawable.black_star, "MV, 몰디브", "12345", "12345", 12345))
             add(IslandData(R.drawable.black_star, "MV, 몰디브", "12345", "12345", 12345))
             add(IslandData(R.drawable.black_star, "MV, 몰디브", "12345", "12345", 12345))
@@ -62,7 +59,22 @@ class IslandFragment : Fragment() { //, IslandView
             islandRVAdapter.datas = datas
             islandRVAdapter.notifyDataSetChanged()
 
+            //recyclerview item 클릭하면 fragment
+            islandRVAdapter.setItemClickListener(object: IslandRVAdapter.OnItemClickListener{
+                override fun onClick(v: View, position: Int) {
+                    // 클릭 시 이벤트 작성
+                    activity?.let{
+                        val intent = Intent(context, DetailActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                }
+            })
+            islandRVAdapter.notifyDataSetChanged()
+
         }
+
+
     }
 
     /*override fun onIslandSuccess(result: IslandResult) {
