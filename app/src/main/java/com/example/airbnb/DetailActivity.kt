@@ -1,7 +1,6 @@
 package com.example.airbnb
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.content.Intent
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
@@ -22,14 +21,29 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
     override fun initAfterBinding() {
         setContentView(binding.root)
 
-        //intent로 객체 받아오기 -> 서버 연결되면 onSucess()로 이동
+        //intent로 객체 받아오기
         /*val intent = intent*/
         island = intent.getSerializableExtra("island") as IslandData
         initBanner()
+
         Log.d("islandNull", island.toString())
+
+        //서버 연결되면 onSucess()로 이동
         //레이아웃에 있는 text를 변경
         binding.detailDateTv.text = island.date
         binding.detailPriceTv.text = island.price.toString()
+
+        ininClickListener()
+
+    }
+
+    private fun ininClickListener(){
+        binding.detailBackBtnIv.setOnClickListener {
+            /*val intent = Intent(this,IslandFragment::class.java) //IslandFragment로 화면 전환
+            startActivity(intent)*/
+            /*startActivityWithClear(IslandFragment::class.java)*/
+            finish()
+        }
     }
 
 /*    override fun onCreate(savedInstanceState: Bundle?) {

@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ran/Desktop/rororo/airbnb_team2/app/src/main/res/layout/activity_detail.xml" value="0.109375" />
         <entry key="..\:/Users/ran/Desktop/rororo/airbnb_team2/app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/ran/Desktop/rororo/airbnb_team2/app/src/main/res/layout/fragment_island.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/ran/Desktop/rororo/airbnb_team2/app/src/main/res/layout/fragment_profile.xml" value="0.15260416666666668" />
         <entry key="..\:/Users/ran/Desktop/rororo/airbnb_team2/app/src/main/res/layout/item_accommodations.xml" value="0.15806159420289856" />
         <entry key="..\:/Users/ran/Desktop/rororo/airbnb_team2/app/src/main/res/layout/item_facilities_detail.xml" value="0.15806159420289856" />
         <entry key="..\:/Users/ran/Desktop/zero/airbnb_zero/app/src/main/res/drawable-v24/btm_color_selector.xml" value="0.1" />
