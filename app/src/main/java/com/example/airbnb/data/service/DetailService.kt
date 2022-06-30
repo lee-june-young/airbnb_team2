@@ -33,13 +33,14 @@ class DetailService {
                 call: Call<DetailResponse2>,
                 response: Response<DetailResponse2>
             ) {
-                val resp = response.body()!!
+                //서버 404라서 response.body()!!에서 오류나서 주석처리해둠 body가 null이 돼가지고 오류남.
+/*                val resp = response.body()!!
                 Log.d("success1",response.toString())
 
                 when(resp.code){
                     1000->detailView.onDetailSuccess(resp.result)
                     else->detailView.onDetailFailure(resp.code)
-                }
+                }*/
             }
 
             //통신자체가 안되면
@@ -55,18 +56,18 @@ class DetailService {
         detailFacilityView.onDetailFacilityLoading()
 
         DetailService.getFacility(roomIdx).enqueue(object:
-        Callback<DetailResponse>{
+            Callback<DetailResponse>{
             override fun onResponse(
                 call: Call<DetailResponse>,
                 response: Response<DetailResponse>
             ) {
-                val resp = response.body()!!
+/*                val resp = response.body()!!
                 Log.d("success",response.toString())
 
                 when(resp.code){
                     1000->detailFacilityView.onDetailFacilitySuccess(resp.result)
                     else->detailFacilityView.onDetailFacilityFailure(resp.code)
-                }
+                }*/
             }
 
             //통신자체가 안되면

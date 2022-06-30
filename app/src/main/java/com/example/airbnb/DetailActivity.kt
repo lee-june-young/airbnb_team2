@@ -16,18 +16,40 @@ class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
 
     lateinit var binding: ActivityDetailBinding
     /*private var facilityDatas = ArrayList<Facility>()*/
+    lateinit var island : IslandData
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //intent로 객체 받아오기 -> 서버 연결되면 onSucess()로 이동
+        /*val intent = intent*/
+        island = intent.getSerializableExtra("island") as IslandData
+        initBanner()
+        Log.d("islandNull", island.toString())
+        if (island != null) {
+            //레이아웃에 있는 text를 변경
+            binding.detailDateTv.text = island.date
+            binding.detailPriceTv.text = island.price.toString()
+        }//
+
+    }
+
+    private fun initBanner(){
         //배너작업
         val photoAdapter = PhotoVPAdapter(this)
+        /*//지금은 더미데이터
         photoAdapter.addFragment(PhotoFragment(R.drawable.img_detail_viewpager_exp)) //사진 넣기
         photoAdapter.addFragment(PhotoFragment(R.drawable.img_detail_viewpager_exp2))
         photoAdapter.addFragment(PhotoFragment(R.drawable.img_detail_viewpager_exp)) //사진 넣기
-        photoAdapter.addFragment(PhotoFragment(R.drawable.img_detail_viewpager_exp2))
+        photoAdapter.addFragment(PhotoFragment(R.drawable.img_detail_viewpager_exp2))*/
 
+        //일단은 반복해서 4개 넣어둠- 나중에 배열로 imgUrl주소 받아오면 수정 필요
+        photoAdapter.addFragment(PhotoFragment(island.coverImg!!))
+        photoAdapter.addFragment(PhotoFragment(island.coverImg!!))
+        photoAdapter.addFragment(PhotoFragment(island.coverImg!!))
+        photoAdapter.addFragment(PhotoFragment(island.coverImg!!))
 
         binding.detailPhotoVp.adapter = photoAdapter
         binding.detailPhotoVp.orientation=ViewPager2.ORIENTATION_HORIZONTAL
@@ -43,7 +65,6 @@ class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
                 }
             })
         }
-
     }
 
     override fun onStart() {
@@ -56,7 +77,7 @@ class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
     }
 
     private fun initRecyclerview(iA:ArrayList<Int>) { //호텔편의시설 recyclerview
-        //원래 FLO에서는 context 자리에 걍 context 넣던데 왜 안돼?
+        //원래 FLO에서는 context 자리에 걍 context 넣던데 왜 안돼? => 일단 되는데,
         binding.detailFacilitiesRv.layoutManager = LinearLayoutManager(this@DetailActivity,LinearLayoutManager.VERTICAL,false)
         val facilityRVAdapter = DetailFacilitiesRVAdapter()
         binding.detailFacilitiesRv.adapter = facilityRVAdapter
@@ -93,6 +114,9 @@ class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
 
     override fun onDetailSuccess(result: ArrayList<DetailHouseInfoResponse>) {
         val essential : DetailHouseInfoResponse = result[0]
+
+
+
         binding.detailTitleTv.text="      " + essential.roomName
         binding.detailLocationTv.text=essential.roomLocation
         binding.detailHostTv.text = essential.hostName
@@ -101,7 +125,7 @@ class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
     }
 
     override fun onDetailFailure(code: Int) {
-       //
+        //
     }
 
 }
