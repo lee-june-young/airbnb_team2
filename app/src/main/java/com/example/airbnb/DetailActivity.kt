@@ -11,20 +11,34 @@ import com.example.airbnb.data.service.DetailService
 import com.example.airbnb.data.view.DetailFacilityView
 import com.example.airbnb.data.view.DetailView
 import com.example.airbnb.databinding.ActivityDetailBinding
+import com.example.udemy_android_template.ui.BaseActivity
 
-class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
+class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding::inflate), DetailFacilityView, DetailView {
 
-    lateinit var binding: ActivityDetailBinding
+    /*lateinit var binding: ActivityDetailBinding*/ //=>baseActivity이용
     /*private var facilityDatas = ArrayList<Facility>()*/
     lateinit var island : IslandData
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityDetailBinding.inflate(layoutInflater)
+    override fun initAfterBinding() {
         setContentView(binding.root)
 
         //intent로 객체 받아오기 -> 서버 연결되면 onSucess()로 이동
         /*val intent = intent*/
+        island = intent.getSerializableExtra("island") as IslandData
+        initBanner()
+        Log.d("islandNull", island.toString())
+        //레이아웃에 있는 text를 변경
+        binding.detailDateTv.text = island.date
+        binding.detailPriceTv.text = island.price.toString()
+    }
+
+/*    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        *//*binding = ActivityDetailBinding.inflate(layoutInflater)*//* //=>baseActivity이용
+        setContentView(binding.root)
+
+        //intent로 객체 받아오기 -> 서버 연결되면 onSucess()로 이동
+        *//*val intent = intent*//*
         island = intent.getSerializableExtra("island") as IslandData
         initBanner()
         Log.d("islandNull", island.toString())
@@ -34,7 +48,7 @@ class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
             binding.detailPriceTv.text = island.price.toString()
         }//
 
-    }
+    }*/
 
     private fun initBanner(){
         //배너작업
@@ -127,5 +141,7 @@ class DetailActivity : AppCompatActivity(), DetailFacilityView, DetailView {
     override fun onDetailFailure(code: Int) {
         //
     }
+
+
 
 }
